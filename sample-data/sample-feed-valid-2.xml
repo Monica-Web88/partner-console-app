@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program>
+  <channelId>HRB-SPORTS-04</channelId>
+  <airDate>2026-08-09T23:00:00Z</airDate>
+  <programTitle>Friday Night Rivalry: Regional Semifinal</programTitle>
+  <ratingSystem>TV-PG</ratingSystem>
+  <closedCaptionUrl>https://cdn.harborsports.tv/cc/9981.vtt</closedCaptionUrl>
+  <durationSeconds>7200</durationSeconds>
+  <contentAdvisory>Mild language</contentAdvisory>
+  <streamUri>https://cdn.harborsports.tv/streams/9981.m3u8</streamUri>
+</program>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program>
+  <channelId>ACME-EAST-01</channelId>
+  <airDate>2026-08-04T20:00:00Z</airDate>
+  <programTitle>Late Night Rundown</programTitle>
+  <ratingSystem>TV-14</ratingSystem>
+  <closedCaptionUrl>https://cdn.acme.tv/cc/4021.vtt</closedCaptionUrl>
+  <durationSeconds>3600</durationSeconds>
+  <contentAdvisory>Language, brief violence</contentAdvisory>
+  <streamUri>https://cdn.acme.tv/streams/4021.m3u8</streamUri>
+</program>
