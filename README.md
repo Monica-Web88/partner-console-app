@@ -82,35 +82,6 @@ sample-data/
   sample-feed-errors.xml
 ```
 
-## Deploying (Render backend + Vercel frontend)
 
-1. Push this project to a GitHub repo (see steps below).
-2. Deploy `server/` to Render as a Web Service — root directory `server`,
-   build command `npm install`, start command `npm start`. The server
-   auto-seeds demo data on boot.
-3. Deploy `client/` to Vercel — root directory `client`, framework preset
-   Vite. Set the env var `VITE_API_URL` to your Render URL.
-4. Note: Render's free tier disk is **ephemeral** — the SQLite file resets
-   on every redeploy/restart. Fine for a portfolio demo; add a persistent
-   disk (paid tier) if you want data to survive restarts.
 
-Full step-by-step walkthrough is in the conversation this project came from —
-see below for the condensed version.
 
-## Extending it (good next steps for a portfolio version)
-
-- Swap the field-reachability check (`checkReachable` in `feedValidator.js`) to
-  actually hit `streamUri` — it's wired up but off by default (`checkUrls: false`)
-  to keep demo runs fast and deterministic.
-- Add a `PATCH /api/feeds/:id/override` route so a human can approve a field that
-  failed automated validation — the real "QA Review" stage would use this.
-- Deploy `server/` to Render/Railway and `client/` to Vercel; point the client's
-  `vite.config.js` proxy at the deployed API URL instead of localhost.
-
-## Deploying / putting this on your resume
-
-Push this to a public GitHub repo, deploy it (Render + Vercel is the fastest free
-path), and use a real, current metric from your own testing — e.g. "built a feed
-validation engine catching 8 field-level error types across required/enum/date/URL
-checks, backed by SQL-driven failure analytics." Don't reuse the placeholder counts
-in the seed data as a resume claim — they're illustrative, not a real result.
