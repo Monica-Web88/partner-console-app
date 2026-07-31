@@ -18,11 +18,10 @@
 
 ## 📸 Project Preview
 
-Dashboard
-Partner Ingestion Console - Home Page using Clean sample
+Dashboard for Partner Ingestion Console - using clean sample
 ![Partner_Console Screenshot](images/partner_console1.jpg)
 
-Partner Ingestion Console - Home Page using Broken sample
+Dashboard for Partner Ingestion Console - using broken sample
 ![Partner_Console Screenshot](images/partner_console2.jpg)
 
 
