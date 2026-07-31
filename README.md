@@ -1,47 +1,236 @@
-# Partner Ingestion Console
+# 🚀 Partner Ingestion Console
 
-A working demo of a TV-partner content ingestion & validation tool — the kind of
-internal tooling a Partner Engineer builds to get media companies' feeds onboarded,
-validated, and live. Built to be genuinely runnable, not just a mockup.
+> **A production-ready Partner Ingestion Console that simulates the internal tooling used by Partner Engineers to ingest media partner XML feeds, validate them against a real schema, track onboarding progress, and surface analytics that help operations teams identify the most common validation failures.**
 
-**Stack:** React + Vite (frontend) · Express + better-sqlite3 (API) · real XML
-parsing and field validation · SQL aggregation for analytics.
+---
 
-## What it actually does
+## 🌐 Live Demo
 
-- **Validates real XML feeds** against a declarative rule set (required fields,
-  ISO-8601 dates, enums, URL format, integer coercion) — see
-  `server/src/validators/feedValidator.js`.
-- **Persists every validation run** to SQLite so history accumulates as you use it.
-- **Answers "what's failing most" with a real SQL query**, not a hardcoded array —
-  see `GET /api/analytics/failing-fields` in `server/src/routes/analytics.js`.
-- **Tracks partner pipeline stage** (Submitted → Validating → QA → Live) and logs
-  an event every time something changes, which feeds the live activity ticker.
-- Ships with two sample feeds (`sample-data/`) — one clean, one full of the kind
-  of errors a partner-ops team actually sees.
+### 👉 **Click here to view the live deployed project**
 
-## Run it locally
+**Frontend (Vercel) + Backend (Render)**
 
-You'll need Node 18+ (for the built-in `fetch` used in optional URL reachability
-checks).
+🔗 **https://partner-console-app.vercel.app/**
 
-```bash
-# 1. Start the API (seeds demo partners + 7 days of history on first run)
-cd server
-npm install
-npm run seed     # only needed once
-npm run dev       # http://localhost:4000
+> Click **"Try a clean sample"** button or **"Try a broken sample"** button to explore the application.
 
-# 2. In a second terminal, start the frontend
-cd client
-npm install
-npm run dev       # http://localhost:5173
+---
+
+## 📸 Project Preview
+
+Dashboard for Partner Ingestion Console - using clean sample
+![Partner_Console Screenshot](images/partner_console1.jpg)
+
+Dashboard for Partner Ingestion Console - using broken sample
+![Partner_Console Screenshot](images/partner_console2.jpg)
+
+
+---
+
+## ✨ Features
+
+### 📺 Partner Feed Validation
+
+- Validate real XML feeds against a declarative rule set
+- Required field validation
+- ISO-8601 date validation
+- Enum validation
+- URL format validation
+- Integer coercion with warning support
+- Upload custom XML feeds
+- Includes clean and broken sample feeds
+
+### 📊 Analytics & Reporting
+
+- Persist every validation run to SQLite
+- Track validation history
+- SQL-powered "Top Failing Fields" analytics
+- Real-time charts using Recharts
+- Live activity ticker
+
+### 🔄 Partner Onboarding Pipeline
+
+- Track partner onboarding stages
+- Submitted → Validating → QA Review → Live
+- Log pipeline events automatically
+- Monitor onboarding progress in real time
+
+### 🌐 Feed Verification
+
+- Optional live URL reachability checks
+- Stream URL validation
+- Closed Caption URL validation
+- Timeout handling using Node's native fetch
+
+### 📱 Responsive UI
+
+- Clean dashboard interface
+- Interactive charts
+- Responsive layout
+- Modern React-based user experience
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- React
+- Vite
+- Recharts
+
+### Backend
+
+- Node.js
+- Express.js
+
+### Database
+
+- SQLite
+- better-sqlite3
+
+### XML Processing
+
+- fast-xml-parser
+
+### Deployment
+
+- **Frontend:** Vercel
+- **Backend:** Render
+
+---
+
+## 💡 Why This Project Exists
+
+Partner-facing engineering roles require the ability to ingest external partner data, validate it reliably, analyze recurring issues, and manage operational workflows.
+
+This project demonstrates those skills by:
+
+- Parsing and validating real XML feeds
+- Persisting validation history in SQLite
+- Using SQL to identify the most common validation failures
+- Managing partners through a real onboarding pipeline
+- Providing analytics and operational visibility through an interactive dashboard
+
+Built while preparing for a **Partner Engineering** role, the feature set closely mirrors real-world partner onboarding and internal tooling workflows.
+
+---
+
+## 📂 Project Structure
+
+```text
+partner-console-app/
+│
+├── client/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   └── api.js
+│   └── package.json
+│
+├── server/
+│   ├── src/
+│   │   ├── index.js
+│   │   ├── db.js
+│   │   ├── schema.sql
+│   │   ├── seed.js
+│   │   ├── validators/
+│   │   │   └── feedValidator.js
+│   │   └── routes/
+│   │       ├── analytics.js
+│   │       ├── events.js
+│   │       ├── feeds.js
+│   │       └── partners.js
+│   ├── package.json
+│   └── ...
+│
+├── sample-data/
+│   ├── sample-feed-valid.xml
+│   ├── sample-feed-valid-2.xml
+│   ├── sample-feed-valid-3.xml
+│   ├── sample-feed-errors.xml
+│   ├── sample-feed-errors-2.xml
+│   └── sample-feed-errors-3.xml
+│
+└── README.md
 ```
 
-Open http://localhost:5173. Pick a partner from the dropdown, then either:
-- click **"Try a clean sample"** / **"Try a broken sample"**, or
-- click **"Upload XML feed"** and pick one of the files in `sample-data/`, or
-  any XML file of your own shaped like:
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18 or above
+
+---
+
+### Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Monica-Web88/partner-console-app.git
+```
+
+Install Backend Dependencies
+
+```bash
+cd partner-console-app/server
+npm install
+```
+
+Install Frontend Dependencies
+
+```bash
+cd ../client
+npm install
+```
+
+---
+
+## ▶️ Run the Project
+
+### Backend
+
+```bash
+cd server
+npm start
+```
+
+Runs at:
+
+```
+http://localhost:4000
+```
+
+### Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+Runs at:
+
+```
+http://localhost:5173
+```
+
+Open your browser:
+
+```
+http://localhost:5173
+```
+
+Select a partner, then:
+
+- Click **"Try a clean sample"**
+- Click **"Try a broken sample"**
+- Or upload your own XML feed.
+
+---
+
+## 📄 Sample XML Format
 
 ```xml
 <program>
@@ -56,61 +245,36 @@ Open http://localhost:5173. Pick a partner from the dropdown, then either:
 </program>
 ```
 
-Every validation run updates the results table, the "top failing fields" chart,
-and the live activity ticker at the bottom — all backed by the same SQLite file
-(`server/data/console.db`).
+---
 
-## Project structure
+## ☁️ Deployment
 
-```
-server/
-  src/
-    index.js              — Express app + route mounting
-    db.js                 — SQLite connection + schema bootstrap
-    schema.sql             — partners / feeds / validation_results / events
-    seed.js                — demo partners + 7 days of synthetic history
-    validators/
-      feedValidator.js     — the actual XML parsing + field rule engine
-    routes/
-      partners.js, feeds.js, analytics.js, events.js
-client/
-  src/
-    App.jsx                — dashboard UI, wired to the live API
-    api.js                  — thin fetch wrapper
-sample-data/
-  sample-feed-valid.xml
-  sample-feed-errors.xml
-```
+- **Frontend:** Vercel
+- **Backend:** Render
 
-## Deploying (Render backend + Vercel frontend)
+The frontend reads the backend API URL from the `VITE_API_URL` environment variable, allowing the same codebase to work locally (`localhost:4000`) and in production without code changes.
 
-1. Push this project to a GitHub repo (see steps below).
-2. Deploy `server/` to Render as a Web Service — root directory `server`,
-   build command `npm install`, start command `npm start`. The server
-   auto-seeds demo data on boot.
-3. Deploy `client/` to Vercel — root directory `client`, framework preset
-   Vite. Set the env var `VITE_API_URL` to your Render URL.
-4. Note: Render's free tier disk is **ephemeral** — the SQLite file resets
-   on every redeploy/restart. Fine for a portfolio demo; add a persistent
-   disk (paid tier) if you want data to survive restarts.
+> **Note:** The backend runs on Render's free tier. The first request after inactivity may take approximately **30 seconds** while the service wakes up.
 
-Full step-by-step walkthrough is in the conversation this project came from —
-see below for the condensed version.
+---
 
-## Extending it (good next steps for a portfolio version)
+## ⭐ Highlights
 
-- Swap the field-reachability check (`checkReachable` in `feedValidator.js`) to
-  actually hit `streamUri` — it's wired up but off by default (`checkUrls: false`)
-  to keep demo runs fast and deterministic.
-- Add a `PATCH /api/feeds/:id/override` route so a human can approve a field that
-  failed automated validation — the real "QA Review" stage would use this.
-- Deploy `server/` to Render/Railway and `client/` to Vercel; point the client's
-  `vite.config.js` proxy at the deployed API URL instead of localhost.
+- Real XML Feed Validation
+- Declarative Rule Engine
+- SQLite Data Persistence
+- SQL Analytics
+- Partner Onboarding Workflow
+- Live Activity Tracking
+- Field-Level Validation
+- Upload Custom XML Feeds
+- Interactive Charts with Recharts
+- Production Deployment on Vercel & Render
 
-## Deploying / putting this on your resume
+---
 
-Push this to a public GitHub repo, deploy it (Render + Vercel is the fastest free
-path), and use a real, current metric from your own testing — e.g. "built a feed
-validation engine catching 8 field-level error types across required/enum/date/URL
-checks, backed by SQL-driven failure analytics." Don't reuse the placeholder counts
-in the seed data as a resume claim — they're illustrative, not a real result.
+## 📬 Contact
+
+**Monica Arunkumar**
+
+GitHub: https://github.com/Monica-Web88
