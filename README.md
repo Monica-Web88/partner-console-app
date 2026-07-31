@@ -19,29 +19,12 @@
 ## 📸 Project Preview
 
 Dashboard
-```text
-(Add Dashboard Screenshot)
-```
+Partner Ingestion Console - Home Page using Clean sample
+![Partner_Console Screenshot](images/partner_console1.jpg)
 
-XML Feed Validation
-```text
-(Add Validation Screenshot)
-```
+Partner Ingestion Console - Home Page using Broken sample
+![Partner_Console Screenshot](images/partner_console2.jpg)
 
-Validation Results & Errors
-```text
-(Add Results Screenshot)
-```
-
-Analytics Dashboard
-```text
-(Add Analytics Screenshot)
-```
-
-Partner Pipeline & Activity Feed
-```text
-(Add Pipeline Screenshot)
-```
 
 ---
 
