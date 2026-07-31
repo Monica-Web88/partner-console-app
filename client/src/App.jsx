@@ -191,7 +191,7 @@ export default function App() {
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <Radio size={20} color={COLORS.cyan} />
           <div>
-            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600, fontSize: 16 }}>Partner Ingestion Console</div>
+            <div style={{ fontFamily: "'Space Grotesk',sans-serif", fontWeight: 600, fontSize: 16 }}>Monica's Partner Ingestion Console</div>
             <div style={{ fontSize: 11, color: COLORS.textMuted, fontFamily: "'IBM Plex Mono',monospace" }}>
               TV PARTNER ENGINEERING · ONBOARDING &amp; FEED VALIDATION
             </div>
