@@ -12,7 +12,7 @@
 
 🔗 **https://partner-console-app.vercel.app/**
 
-> Click **"Try a clean sample"** or **"Try a broken sample"** to explore the application.
+> Click **"Try a clean sample"** button or **"Try a broken sample"** button to explore the application.
 
 ---
 
